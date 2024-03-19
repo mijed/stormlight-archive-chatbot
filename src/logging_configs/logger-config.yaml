@@ -5,12 +5,11 @@ formatters:
     format: '%(levelname)s: %(message)s'
     datefmt: '%Y-%m-%dT%H:%M:%S%z'
   json:
-    (): json_formatter.JsonFormatter
+    (): src.logging.json_formatter.JsonFormatter
     fmt_keys:
       level: levelname
       message: message
       timestamp: timestamp
-      logger: name
       module: module
       function: funcName
       line: lineno
