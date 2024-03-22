@@ -4,7 +4,6 @@ import pathlib
 import yaml
 
 from src.utils.consts import SRC_ROOT_PATH
-
 logger = logging.getLogger(__name__)
 
 
