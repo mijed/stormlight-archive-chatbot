@@ -2,7 +2,7 @@ version: 1
 disable_existing_loggers: false
 formatters:
   simple:
-    format: '%(levelname)s: %(message)s'
+    format: '%(asctime)s - [%(filename)s:%(lineno)d] - %(levelname)s: %(message)s'
     datefmt: '%Y-%m-%dT%H:%M:%S%z'
   json:
     (): src.logging.json_formatter.JsonFormatter
@@ -24,7 +24,7 @@ handlers:
     level: DEBUG
     formatter: json
     filename: ../logs/my_app.log.jsonl
-    maxBytes: 10000
+    maxBytes: 500_000_000
     backupCount: 3
 loggers:
   root:
