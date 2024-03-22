@@ -2,7 +2,7 @@ from typing import Any
 
 import requests
 from bs4 import BeautifulSoup
-addfrom src.utils.consts import BASE_URL, WIKI_ALL_PAGES_URL, RAW_DATA_PATH
+from src.utils.consts import BASE_URL, WIKI_ALL_PAGES_URL, RAW_DATA_PATH
 from src.logging.logger import logger
 import polars as pl
 import os
