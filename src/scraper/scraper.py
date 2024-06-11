@@ -7,7 +7,6 @@ from src.logging.logger import logger
 import polars as pl
 import os
 
-# TODO: data preprocessing
 
 def extract_text_from_page(url: str) -> str:
     response = requests.get(url)

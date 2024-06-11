@@ -3,3 +3,4 @@ venv/
 .idea/
 __pycache__/
 src/logs/my_app.log.jsonl
+*.csv
