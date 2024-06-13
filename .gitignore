@@ -4,3 +4,4 @@ venv/
 __pycache__/
 src/logs/my_app.log.jsonl
 *.csv
+*.env

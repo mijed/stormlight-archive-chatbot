@@ -2,3 +2,10 @@ polars==0.20.13
 beautifulsoup4==4.9.3
 requests==2.31.0
 pyyaml==6.0.1
+python-dotenv
+langchain
+langchain-community
+langchain-openai
+openai
+deeplake
+black

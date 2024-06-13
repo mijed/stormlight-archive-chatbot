@@ -54,7 +54,10 @@ while next_page_url:
         full_link = BASE_URL + link
         extracted_text = extract_text_from_page(full_link)
         logger.info(f"Extracted text from page: {full_link}")
-        data_df = pl.concat([data_df, pl.DataFrame({"url": [full_link], "text": [extracted_text]})], how="diagonal_relaxed")
+        data_df = pl.concat(
+            [data_df, pl.DataFrame({"url": [full_link], "text": [extracted_text]})],
+            how="diagonal_relaxed",
+        )
 
     with open(output_file, mode="ab") as f:
         data_df.write_csv(f, separator=";")
