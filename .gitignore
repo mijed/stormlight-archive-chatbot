@@ -5,3 +5,4 @@ __pycache__/
 src/logs/my_app.log.jsonl
 *.csv
 *.env
+stormlight_chroma_db
