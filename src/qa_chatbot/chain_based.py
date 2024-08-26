@@ -77,22 +77,24 @@ conversational_rag_chain = RunnableWithMessageHistory(
     output_messages_key="answer",
 )
 
-run=True
-print("Ask a question about Stormlight Archive.")
 
-session_id = uuid4()
-while run:
-    question = input("")
-    response = conversational_rag_chain.invoke(
-        {"input": question},
-        config={
-        "configurable": {"session_id": session_id}
-    }
-        )
-    print("Answer: \n")
-    print(response["answer"])
+if __name__ == "__main__":
+    run=True
+    print("Ask a question about Stormlight Archive.")
 
-    keep_asking = input("Do you want to keep asking? (y/n) ")
+    session_id = uuid4()
+    while run:
+        question = input("")
+        response = conversational_rag_chain.invoke(
+            {"input": question},
+            config={
+            "configurable": {"session_id": session_id}
+        }
+            )
+        print("Answer: \n")
+        print(response["answer"])
 
-    if keep_asking not in ["yes", "y"]:
-        run = False
+        keep_asking = input("Do you want to keep asking? (y/n) ")
+
+        if keep_asking not in ["yes", "y"]:
+            run = False
