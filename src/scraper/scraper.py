@@ -2,7 +2,7 @@ from typing import Any
 
 import requests
 from bs4 import BeautifulSoup
-from src.utils.consts import BASE_URL, WIKI_ALL_PAGES_URL, RAW_DATA_PATH
+from src.utils.consts import BASE_URL, WIKI_ALL_PAGES_URL, RAW_DATA_PATH, STOP_SCRAPING_URL
 from src.logging.logger import logger
 import polars as pl
 import os
@@ -47,7 +47,7 @@ if not os.path.isfile(output_file):
 
 data_df = pl.DataFrame({"url": [], "text": []})
 next_page_url = WIKI_ALL_PAGES_URL
-while next_page_url:
+while next_page_url != STOP_SCRAPING_URL:
     hrefs, next_page_href = get_all_hrefs(next_page_url)
     logger.info(f"Going to page: {next_page_href}")
     for link in hrefs:
